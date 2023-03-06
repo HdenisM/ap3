@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Интерактивный веб-плакат Закуток</title>
+    <link rel="stylesheet" href="stylesheets/style.css">
+    <link rel="icon" type="image/icon" href="images/icon.iсo"/>
+    <link rel="icon" type="image/png" href="images/icon.png"/>
+    <meta name="viewport" content="width=device-width">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+      <script type="text/javascript">
+      $(document).ready(function(){
+	       $(".block1left").click(function(){
+           $(".bokal1").css("animation-play-state", "running");
+           $(".bokal2").css("animation-play-state", "running");
+           $(".block1_shake").css("animation-play-state", "paused");
+	        });
+      });
+    </script>
+
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+
+  </head>
+
+  <body>
+    <main class="container">
+      <!-- "ЗАКУТОК" и переключатель -->
+      <div class="head">
+      <img class="zak" src="images/head/zak.svg" alt="zak"></div>
+       <!-- строка 1 -->
+      <section class="stroka1">
+         <!-- блок 1 -->
+        <div class="block1left" id="thing1">
+          <img class="bokal1" src="images/line 1/block 1/bokal1.svg" alt="bokal1">
+          <img class="bokal2" src="images/line 1/block 1/bokal2.svg" alt="bokal2">
+
+          <div class="block1_shake">
+            <img class="bokal1_line" src="images/line 1/block 1/bokal1_line.svg" alt="bokal1_line">
+            <div class="red1left" id="red"></div>
+            <img class="bokal2_line" src="images/line 1/block 1/bokal2_line.svg" alt="bokal2_line">
+            <div class="red2left" id="red"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="block1centre" id="thing1">
+          <img class="nlo1" src="images/line 1/block 2/nlo1.svg" alt="nlo1">
+          <img class="nlo1_line" src="images/line 1/block 2/nlo1_line.svg" alt="nlo1_line">
+          <div class="block1centr_shake_red">
+            <div class="red1centre" id="red"></div>
+            <div class="red2centre" id="red"></div>
+            <div class="red3centre" id="red"></div>
+          </div>
+        </div>
+
+        <div class="block1right" id="thing1">
+          <img class="station" src="images/line 1/block 3/station.svg" alt="station">
+          <img class="station_line" src="images/line 1/block 3/station_line.svg" alt="station_line">
+          <div class="line1"></div>
+          <div class="line2"></div>
+          <div class="red1right" id="red"></div>
+          <div class="red2right" id="red"></div>
+          <div class="red3right" id="red"></div>
+        </div>
+      </section>
+      <!-- строка 2 -->
+      <section class="stroka2">
+        <!-- блок 1 -->
+        <div class="block2left" id="thing2">
+          <div class="shaker">
+        </div>
+        <body>
+        <div id="mydiv">
+          <img class="shaker" src="images/line 2/block 1/shaker.svg" alt="shaker"></div>
+        </div>
+        <!-- скрипт для перетаскивания шейкера -->
+        <script>
+        dragElement(document.getElementById("mydiv"));
+
+        function dragElement(elmnt) {
+          var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+          if (document.getElementById(elmnt.id + "header")) {
+            document.getElementById(elmnt.id + "header").onmousedown = dragMouseDown;
+          } else {
+            elmnt.onmousedown = dragMouseDown;
+          }
+
+          function dragMouseDown(e) {
+            e = e || window.event;
+            e.preventDefault();
+            pos3 = e.clientX;
+            pos4 = e.clientY;
+            document.onmouseup = closeDragElement;
+            document.onmousemove = elementDrag;
+          }
+
+          function elementDrag(e) {
+            e = e || window.event;
+            e.preventDefault();
+            pos1 = pos3 - e.clientX;
+            pos2 = pos4 - e.clientY;
+            pos3 = e.clientX;
+            pos4 = e.clientY;
+            elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+            elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+          }
+
+          function closeDragElement() {
+            document.onmouseup = null;
+            document.onmousemove = null;
+          }
+        }
+        </script>
+        <!-- блок 2 -->
+        <div class="block2right" id="thing3">
+          <img class="guitar" src="images/line 2/block 2/guitar.svg" alt="guitar">
+          <img class="guitar_line" src="images/line 2/block 2/guitar_line.svg" alt="guitar_line">
+          <img class="strings_line" src="images/line 2/block 2/strings_line.svg" alt="strings_line">
+        </div>
+
+
+
+
+
+
+
+
+      </section>
+    </main>
+  </body>
+</html>

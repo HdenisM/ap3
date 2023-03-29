@@ -46,6 +46,15 @@ body:active{
   border-color: #00B7FF;
   overflow: hidden;
 }
+/* длинный блок ◊ */
+#thing4{
+  width: 56.5vw;
+  height: 25vw;
+  border: solid;
+  border-width: .2vw;
+  border-color: #00B7FF;
+  overflow: hidden;
+}
 
 /* голова ◊ */
 .head{
@@ -58,15 +67,43 @@ body:active{
   position: relative;
   margin: 0 auto;
 }
+.string{
+  position: relative;
+  background-color: #00B7FF;
+  width: .2vw;
+  height: 10vw;
+  right: 10vw;
+  bottom: 7.5vw;
+}
+.switch{
+  position: relative;
+  border: solid;
+  border-width: .2vw;
+  border-color: #00B7FF;
+  border-radius: 100%;
+  width: 1.5vw;
+  height: 2.5vw;
+  right: 10vw;
+  top: 2.5vw;
+  right: 12.03vw;
+}
 
 /* строки */
-.stroka1, .stroka2, .stroka3 {
+.stroka1, .stroka2, .stroka3, .podval {
   display: flex;
   gap: 6vw;
   margin: 5vw;
 }
 
 /* строка 1 */
+.dzin{
+  position: absolute;
+  width: 20vw;
+  top: 20vw;
+  opacity: 0%;
+  animation: 2s appear infinite;
+  animation-play-state: paused;
+}
 .block1left, .blok1centre, .block1right, .block2left, .blok2centre, {
   overflow: hidden;
 }
@@ -87,9 +124,7 @@ body:active{
         left: -11vw;
         top: 7.5vw;
         width: 22vw;
-
-        animation: bokal1_hit 1s;
-        animation-play-state: paused;
+        animation: bokal1_hit 1s infinite alternate;
       }
       .bokal1_line{
         position: relative;
@@ -106,9 +141,8 @@ body:active{
         left: 13.7vw;
         bottom: 6.74vw;
         width: 22.2vw;
+        animation: bokal2_hit 1s infinite alternate;
 
-        animaton: bokal2_hit 1s;
-        animaton-play-state: paused;
       }
       .bokal2_line{
         position: relative;
@@ -128,13 +162,19 @@ body:active{
     100% {bottom: 11.5vw;}
   }
   @keyframes bokal1_hit {
-    0% {right: 200px;}
-    100% {right: 150px;}
+    0% {right: 12vw;}
+    100% {right: 12vw;}
   }
   @keyframes bokal2_hit {
     0% {right: -296px;}
     100% {right: -246px;}
   }
+  @keyframes appear {
+    0% {top: 20vw; opacity: 0%;}
+    50% { opacity: 100%;}
+    100% {top: 0vw; opacity: 0%;}
+  }
+
 
   /* блок 2*/
     .block1centre{
@@ -206,14 +246,12 @@ body:active{
       }
       .station_line{
         position: relative;
-        width: 14vw;
-        top: -2vw;
-        left: -4vw;
+
         animation: block3_shake 10s infinite;
       }
       .line1{
         position: relative;
-        width: .3vw;
+        width: .2vw;
         height: 9vw;
         background-color: #00B7FF;
         bottom: 1vw;
@@ -222,7 +260,7 @@ body:active{
       }
       .line2{
         position: relative;
-        width: .3vw;
+        width: .2vw;
         height: 3vw;
         background-color: #00B7FF;
         top: 1vw;
@@ -232,19 +270,19 @@ body:active{
       .red1right{
       position: relative;
       top: 3vw;
-      left: -17vw;
+      left: -5vw;
       animation: 2s block3_red1_glow 2s infinite alternate;
       }
       .red2right{
       position: relative;
       top: 6vw;
-      left: -1vw;
+      left: 8vw;
       animation: block3_red2_glow 2s infinite alternate;
       }
       .red3right{
       position: relative;
       top: 22vw;
-      left: -5vw;
+      left: 3vw;
       animation: 1s block3_red2_glow 2s infinite alternate;
       }
   /* блок 3 - анимации*/
@@ -256,12 +294,12 @@ body:active{
         100% {rotate: 360deg;}
       }
       @keyframes line1_shake {
-        0%{rotate: 45deg; left: -19vw; top: 15vw;}
-        100%{rotate: 45deg; left: -15vw; top: 13vw;}
+        0%{rotate: 45deg; left: -10vw; top: 15vw;}
+        100%{rotate: 45deg; left: -7vw; top: 13vw;}
       }
       @keyframes line2_shake {
-        0%{rotate: 20deg; left: -11vw; top: 16vw;}
-        100%{rotate: 20deg; left: -12vw; top: 20vw;}
+        0%{rotate: 20deg; left: -3vw; top: 17vw;}
+        100%{rotate: 20deg; left: -4vw; top: 20vw;}
       }
       @keyframes block3_red1_glow {
         0% {opacity: 100%}
@@ -286,7 +324,7 @@ body:active{
       position: absolute;
       width: 20vw;
       height: 20vw;
-      right: -4vw;
+      right: 0vw;
       z-index: 1;
       cursor: move;
     }
@@ -299,26 +337,138 @@ body:active{
   /*(строка 2) блок 2*/
     .guitar{
       position: relative;
-      width: 70vw;
-      height: 70vw;
+      width: 50vw;
+      height: 50vw;
       rotate: -20deg;
       bottom: 7vw;
-      right: 16vw;
+      right: 13vw;
     }
     .guitar_line{
       position: relative;
-      width: 70vw;
-      height: 70vw;
+      width: 50vw;
+      height: 50vw;
       rotate: -20deg;
-      bottom: 76vw;
-      right: 19.15vw;
+      bottom: 56.5vw;
+      right: 15.27vw;
     }
     .strings_line{
       position: relative;
-      width: 70vw;
-      height: 70vw;
+      width: 50vw;
+      height: 50vw;
       rotate: -20deg;
-      bottom: 145vw;
-      right: 19.85vw;
+      bottom: 105vw;
+      right: 15.45vw;
     }
+  /*(строка 3) блок 1*/
+    .nlo2_line{
+      position: relative;
+      width: 14vw;
+      height: 14vw;
+      left: 5.3vw;
+      top: -1vw;
+    }
+    .light{
+      position: relative;
+      width: 13vw;
+      height: 13vw;
+      left: 5.8vw;
+      top: -5vw;
+    }
+    .luchi_light{
+      position: relative;
+      width: 15vw;
+      height: 15vw;
+      left: 4.9vw;
+      top: -19.5vw;
+      animation: 1s block3_red2_glow 2s infinite alternate;
+    }
+  /*(строка 3) блок 2*/
+    .micro{
+      z-index: 2;
+      position: relative;
+      width: 8vw;
+      right: 25vw;
+      top: 7vw;
+    }
+    .micro_line{
+      z-index: 3;
+      position: relative;
+      width: 8vw;
+      left: 23.5vw;
+      top: -4.5vw;
+    }
+    .scene_line{
+      position: relative;
+      width: 60vw;
+      left: -1.5vw;
+      top: -12vw;
+    }
+    .heads1_line{
+      position: relative;
+      left: -1.5vw;
+      top: 1vw;
+    }
+    .heads2_line{
+      position: relative;
+      left: 10vw;
+      top: 0.6vw;
+    }
+    .red7left {
+      position: relative;
+      bottom: 29vw;
+      left: 4vw;
+      animation: red7left 2s infinite;
+    }
+    .red7centre {
+      position: relative;
+      bottom: 31vw;
+      left: 12vw;
+      animation: red7centre 2s infinite;
+    }
+    .red7rigth {
+      position: relative;
+      bottom: 31vw;
+      left: 40vw;
+      animation: red7right 2s infinite;
+    }
+    .red7rigth2 {
+      position: relative;
+      bottom: 30.5vw;
+      left: 52vw;
+      animation: red7right2 2s infinite;
+    }
+
+    @keyframes red7left {
+      0% {bottom: 29vw; opacity: 0%}
+      70% {opacity: 100%}
+      100% {bottom: 35vw;  opacity: 0%}
+    }
+    @keyframes red7centre {
+      0% {bottom: 31vw; opacity: 0%}
+      70% {opacity: 100%}
+      100% {bottom: 37vw;  opacity: 0%}
+    }
+    @keyframes red7right {
+      0% {bottom: 31vw; opacity: 0%}
+      70% {opacity: 100%}
+      100% {bottom: 37vw;  opacity: 0%}
+    }
+    @keyframes red7right2 {
+      0% {bottom: 30.5vw; opacity: 0%}
+      70% {opacity: 100%}
+      100% {bottom: 36.5vw;  opacity: 0%}
+    }
+  /*подвал*/
+  .fio{
+    width: 20vw;
+    position: relative;
+    right: 1vw;
+    top: 1.5vw;
+  }
+  .logo{
+    position: relative;
+    width: 20vw;
+    left: 37vw;
+    top: 1.5vw;
+  }
 }
